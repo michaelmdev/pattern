@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>uml.orders</OriginalElement>
+  <nodes>
+    <node x="-274.0" y="-137.0">uml.orders.Order</node>
+    <node x="-389.0" y="25.0">uml.orders.OrderItem</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="uml.orders.Order" target="uml.orders.OrderItem">
+      <point x="0.0" y="-36.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="31.0" y="14.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
