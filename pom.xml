@@ -27,6 +27,13 @@
             <artifactId>reflections</artifactId>
             <version>RELEASE</version>
         </dependency>
+
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>javax.mail-api</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
     </dependencies>
 
     <properties>
