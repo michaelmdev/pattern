@@ -7,13 +7,18 @@ import java.util.Set;
 
 /**
  * @author michael.malevannyy@gmail.com, 24.03.2017
- *         <p>
- *         Фабричный метод, порождаем объект конкретного класса на основе внешенй информации
+ *
+ *    Фабричный метод, порождаем объект конкретного класса на основе внешенй информации
+ *    особенности реализации
+ *    1) можем дернуть конкретный класс через жосткую связь
+ *    2) можем использовать интроспекцию (рефлекшн)
+ *    3) можем импользовать бины (в преедлах контейнера) - здесь не показано
  */
 
 public class Fabric {
     private static Fabric instance = new Fabric();
 
+    // танцуем от одного экземпляра
     public static Fabric getInstance() {
         return instance;
     }
@@ -24,16 +29,16 @@ public class Fabric {
     public static final String citilink = "Citilink";
     public static final String ulmart = "Ulmart";
 
-
+    // создать объект реализующий известный клиенту интерфейс на основе внешней информации, как именнно - это уже детали реализации
     public ExchangeFactory createFactory(String name) throws IllegalAccessException, InstantiationException {
 
 
         switch (name) {
             case citilink:
-                // вариант с зависимостью
+                // 1) вариант - с жёсткой зависимостью
                 return new CitilinkExchangeFactory();
             default:
-                // вариант с интроспекцией
+                // 2) вариант - с интроспекцией
                 Package aPackage = Fabric.class.getPackage();
                 Reflections reflections = new Reflections(aPackage);
                 Set<Class<? extends ExchangeFactory>> typesOf = reflections.getSubTypesOf(ExchangeFactory.class);
@@ -46,6 +51,5 @@ public class Fabric {
         }
 
         return null;
-
     }
 }
