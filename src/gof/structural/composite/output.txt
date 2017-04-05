@@ -1,0 +1,8 @@
+отверстие 6 мм
+performing CompositeOperation
+{
+отверстие 5 мм
+нарезать резьбу M6
+снять фаску 10мм
+}
+Process finished with exit code 0

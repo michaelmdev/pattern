@@ -1,10 +1,12 @@
-package gof.structural.composite;// program@globall.ru @ 03.04.2017.
+package gof.structural.composite;// program@globall.ru @ 04.04.2017.
 
 public interface Operation
 {
-    // выполнить операцию по указанной координате
-    void perform(int x);
+    // определяем наиболее общие операции для иерархии
 
-    // добавить подоперации
-    void add(Operation... operations);
+    // выполнить одиночную или композитную операцию
+    void perform();
+
+    // получить время выполнения
+    int getLeadTime();
 }
