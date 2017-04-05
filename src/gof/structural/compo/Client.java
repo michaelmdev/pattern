@@ -6,6 +6,7 @@ public class Client
         // prepare
         Operation d6 = new MachiningOperation("drill D6");
         Operation d10 = new MachiningOperation("drill D10");
+        Operation fask16 = new MachiningOperation("fask 16");
 
         Operation keyHole = new MachiningOperation("drill keyHole");
 

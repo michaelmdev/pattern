@@ -5,6 +5,6 @@ public interface Operation
     // выполнить операцию по указанной координате
     void perform(int x);
 
-    // добавить под операции
+    // добавить подоперации
     void add(Operation... operations);
 }

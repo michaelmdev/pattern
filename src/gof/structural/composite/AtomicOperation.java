@@ -1,6 +1,6 @@
 package gof.structural.composite;// program@globall.ru @ 03.04.2017.
 
-public class BaseOperation implements Operation
+public class AtomicOperation implements Operation
 {
     @Override
     public void perform(int x)
