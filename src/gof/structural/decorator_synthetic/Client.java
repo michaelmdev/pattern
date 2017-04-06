@@ -1,4 +1,4 @@
-package gof.structural.decorator;
+package gof.structural.decorator_synthetic;
 
 public class Client {
     public void doSomeUseful() {

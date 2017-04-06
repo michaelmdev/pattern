@@ -1,5 +1,7 @@
 package gof.structural.composite;// program@globall.ru @ 04.04.2017.
 
+import com.google.common.base.Joiner;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -18,12 +20,12 @@ public class CompositeOperation implements Operation {
     }
 
     @Override
-    public int getLeadTime() {
-        int t = 0;
+    public String getExplanation() {
+        List<String> strings = new ArrayList<>();
         for (Operation operation : operations) {
-            t += operation.getLeadTime();
+            strings.add(operation.getExplanation());
         }
-        return t;
+        return "[" + Joiner.on(',').join(strings) + "]";
     }
 
     public Operation add(Operation... operations) {

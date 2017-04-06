@@ -17,8 +17,8 @@ public class MachiningOperation implements Operation
     }
 
     @Override
-    public int getLeadTime()
-    {
-        return 1;
+    public String getExplanation() {
+        return name;
     }
+
 }
