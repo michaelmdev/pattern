@@ -8,5 +8,4 @@ class ClientTest {
     void demo() {
         new Client().demo();
     }
-
 }
