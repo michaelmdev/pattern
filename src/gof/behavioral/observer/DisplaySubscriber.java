@@ -6,7 +6,7 @@ package gof.behavioral.observer;
 
 public class DisplaySubscriber implements Subscriber {
     @Override
-    public void update(IObservable observable) {
+    public void update(ISubject observable) {
         System.out.println(observable);
     }
 }

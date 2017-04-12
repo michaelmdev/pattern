@@ -6,7 +6,7 @@ package gof.behavioral.observer;
 
 public class EmailSubscriber implements Subscriber {
     @Override
-    public void update(IObservable observable) {
+    public void update(ISubject observable) {
         System.out.printf("senf email %s\n", observable.toString());
     }
 }

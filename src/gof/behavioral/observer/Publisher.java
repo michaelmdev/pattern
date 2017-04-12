@@ -17,5 +17,7 @@ public class Publisher {
         subscribers.remove(subscriber);
     }
 
+    public void notify(ISubject subject) {
 
+    }
 }
