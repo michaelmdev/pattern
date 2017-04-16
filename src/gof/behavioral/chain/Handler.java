@@ -7,9 +7,9 @@ package gof.behavioral.chain;
 public abstract class Handler {
     private Handler next;
 
-    public void handleEvent(Event event) {
+    public void handle(Request request) {
         if(next != null)
-            next.handleEvent(event);
+            next.handle(request);
     }
 
     Handler link(Handler next) {

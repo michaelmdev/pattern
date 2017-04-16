@@ -1,18 +1,24 @@
 package gof.behavioral.chain;
 
-import java.util.Arrays;
-
 public class Client {
     public static void main(String[] args) {
 
-        // создаём цепочку обработки, более важные впееред
-        Handler handler = new LogHandler().link(new AnsweringMachineHandler()).link(new ExposeCall()).link(new CrmHandler());
+        Handler handler = new BusyHandler();
 
+        handler.link(new Operator("#1"))
+                .link(new Operator("#2"))
+                .link(new Operator("#3"))
+                .link(handler);
 
-        for (String s: Arrays.asList("1", "2", "3", "4")) {
-
-            handler.handleEvent(new DemoEvent(s));
-
+        // генерируем поток из 10 запросов
+        for (int i = 0;i<10;i++) {
+            final int temp = i;
+            handler.handle(new Request() {
+                @Override
+                public String getData() {
+                    return Integer.toString(temp);
+                }
+            });
         }
 
     }
