@@ -1,4 +1,4 @@
-package gof.behavioral.caffe;
+package gof.behavioral.observer;
 
 // индикатор температуры,
 // показывает температуру при получении сообщения,

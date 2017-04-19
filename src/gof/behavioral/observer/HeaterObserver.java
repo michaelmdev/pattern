@@ -1,4 +1,4 @@
-package gof.behavioral.caffe;
+package gof.behavioral.observer;
 
 // нагреватель поднимает температуру на step градусов
 // типичный pull-клиент, не обращает вниямения на payload

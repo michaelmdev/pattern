@@ -1,4 +1,4 @@
-package gof.behavioral.caffe;
+package gof.behavioral.observer;
 
 // конкретный субъект
 // нотифицирует, своих подписантов при возникновении изменений в его состоянии

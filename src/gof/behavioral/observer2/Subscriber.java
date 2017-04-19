@@ -1,4 +1,4 @@
-package gof.behavioral.observer;
+package gof.behavioral.observer2;
 
 // интерфейс подписчика, определяет интерфейс реализуемый подписчиками
 public interface Subscriber {

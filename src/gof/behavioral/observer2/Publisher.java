@@ -1,4 +1,4 @@
-package gof.behavioral.observer;
+package gof.behavioral.observer2;
 
 import java.util.ArrayList;
 import java.util.List;

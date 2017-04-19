@@ -1,14 +1,26 @@
 package gof.behavioral.observer;
 
-/**
- * @author michael.malevannyy@gmail.com, 11.04.2017
- */
+import java.util.ArrayList;
+import java.util.List;
 
-public class Subject implements ISubject {
+// абстрактный объект распространения информации
+public abstract class Subject {
+    private List<Observer> observers = new ArrayList<>();
 
+    // подключить снаблюдателя
+    public void attach(Observer observer) {
+        observers.add(observer);
+    }
 
-    @Override
-    public String getState() {
-        return null;
+    // отклюючить наблюдателя
+    public void detach(Observer observer) {
+        observers.remove(observer);
+    }
+
+    // проинформировать подписантов об изменениях
+    protected void notify(Object arg){
+        for (Observer observer : observers) {
+            observer.update(this, arg);
+        }
     }
 }
