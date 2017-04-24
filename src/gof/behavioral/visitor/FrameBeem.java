@@ -5,4 +5,5 @@ package gof.behavioral.visitor;
  */
 
 public class FrameBeem extends Beem {
+
 }
