@@ -1,24 +1,24 @@
 package gof.creational.abstractfactory;
 
+import gof.Money;
+
 /**
  * @author michael.malevannyy@gmail.com, 22.03.2017
  */
 
 public class Client {
-    public void doSomeUseful(String name) {
 
-        try {
+    public Money getSupplierPrice(String supplierName, String article) throws InstantiationException, IllegalAccessException {
 
-            ExchangeFactory exchangeFactory = Fabric.getInstance().createFactory(name);
+            // создать абстрактную фабрику сервисов конкретного поставщика
+            ExchangeFactory exchangeFactory = Fabric.getInstance().createFactory(supplierName);
+
+            // создать фабрикой конкретного поставщика его провайдер некоторых услуг
             PriceProvider priceProvider = exchangeFactory.createPriceProvider();
-            DocProvider docProvider = exchangeFactory.createDocProvider();
 
-            // do some useful ....
+            // получаить услугу
+            Money price = priceProvider.getPrice(article);
 
-        } catch (IllegalAccessException | InstantiationException e) {
-            e.printStackTrace();
-        }
-
-
+            return price;
     }
 }

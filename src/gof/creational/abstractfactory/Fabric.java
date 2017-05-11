@@ -16,25 +16,13 @@ import java.util.Set;
  */
 
 public class Fabric {
-    private static Fabric instance = new Fabric();
-
-    // танцуем от одного экземпляра
-    public static Fabric getInstance() {
-        return instance;
-    }
-
-    // в данной реализации используем конмтанты, но можно использовать конфигурационные файлы
-    // и например искать класс в classpath или создавть класс по имени
-    // и т.п.
-    public static final String citilink = "Citilink";
-    public static final String ulmart = "Ulmart";
+    public static final String SUPPLIER_ONE = "Citilink";
+    public static final String SUPPLIER_TWO = "Ulmart";
 
     // создать объект реализующий известный клиенту интерфейс на основе внешней информации, как именнно - это уже детали реализации
     public ExchangeFactory createFactory(String name) throws IllegalAccessException, InstantiationException {
-
-
         switch (name) {
-            case citilink:
+            case SUPPLIER_ONE:
                 // 1) вариант - с жёсткой зависимостью
                 return new CitilinkExchangeFactory();
             default:
@@ -42,14 +30,20 @@ public class Fabric {
                 Package aPackage = Fabric.class.getPackage();
                 Reflections reflections = new Reflections(aPackage);
                 Set<Class<? extends ExchangeFactory>> typesOf = reflections.getSubTypesOf(ExchangeFactory.class);
-
                 for (Class<? extends ExchangeFactory> aClass : typesOf) {
-                    if (aClass.getSimpleName().contains(ulmart)) {
+                    if (aClass.getSimpleName().contains(SUPPLIER_TWO)) {
                         return aClass.newInstance();
                     }
                 }
         }
-
         return null;
     }
+
+    private static Fabric instance = new Fabric();
+
+    public static Fabric getInstance() {
+        return instance;
+    }
+
+    private Fabric(){}
 }
