@@ -1,23 +1,23 @@
 package gof.structural.facade;
 
+import java.io.IOException;
+
 /**
  * @author michael.malevannyy@gmail.com, 12.05.2017
  */
 
 public class Client {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        ConsoleReader reader = new ConsoleReader();
+        ConsoleFacade facade = new ConsoleFacade();
 
-        System.out.printf("вовд строки:");
-        String s = reader.readString();
+        String s = facade.getString("введтите строку", "default");
 
-        System.out.printf("%s \n",s);
+        System.out.printf("%s \n", s);
 
 
-        System.out.printf("вовд целого:");
-        int n = reader.readInt();
+        int n = facade.getInt("ввдите номер", 6);
 
-        System.out.printf("%d \n",s);
+        System.out.printf("%d \n", n);
     }
 }
