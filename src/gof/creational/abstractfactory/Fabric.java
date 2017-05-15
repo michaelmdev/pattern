@@ -21,22 +21,27 @@ public class Fabric {
 
     // создать объект реализующий известный клиенту интерфейс на основе внешней информации, как именнно - это уже детали реализации
     public ExchangeFactory createFactory(String name) throws IllegalAccessException, InstantiationException {
+        ExchangeFactory exchangeFactory = null;
+
         switch (name) {
             case SUPPLIER_ONE:
                 // 1) вариант - с жёсткой зависимостью
-                return new CitilinkExchangeFactory();
+                exchangeFactory = new CitilinkExchangeFactory();
+                break;
             default:
                 // 2) вариант - с интроспекцией
                 Package aPackage = Fabric.class.getPackage();
                 Reflections reflections = new Reflections(aPackage);
                 Set<Class<? extends ExchangeFactory>> typesOf = reflections.getSubTypesOf(ExchangeFactory.class);
-                for (Class<? extends ExchangeFactory> aClass : typesOf) {
+                for (Class<? extends ExchangeFactory> aClass : typesOf)
                     if (aClass.getSimpleName().contains(SUPPLIER_TWO)) {
-                        return aClass.newInstance();
+                        exchangeFactory = aClass.newInstance();
+                        break;
                     }
-                }
+                break;
         }
-        return null;
+
+        return exchangeFactory;
     }
 
     private static Fabric instance = new Fabric();

@@ -1,6 +1,7 @@
 package gof.structural.facade;
 
 import java.io.IOException;
+import java.net.InetAddress;
 
 /**
  * @author michael.malevannyy@gmail.com, 12.05.2017
@@ -11,13 +12,16 @@ public class Client {
 
         ConsoleFacade facade = new ConsoleFacade();
 
-        String s = facade.getString("введтите строку", "default");
+        System.out.printf("string >");
+        String s = facade.getString();
+        System.out.println(s);
 
-        System.out.printf("%s \n", s);
+        System.out.printf("int >");
+        int n = facade.getInt();
+        System.out.println(n);
 
-
-        int n = facade.getInt("ввдите номер", 6);
-
-        System.out.printf("%d \n", n);
+        System.out.printf("ip >");
+        InetAddress ip = facade.getIp();
+        System.out.println(ip);
     }
 }
