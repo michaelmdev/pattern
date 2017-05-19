@@ -51,6 +51,19 @@
             <version>RELEASE</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.joda/joda-money -->
+        <dependency>
+            <groupId>org.joda</groupId>
+            <artifactId>joda-money</artifactId>
+            <version>0.12</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.javamoney</groupId>
+            <artifactId>moneta</artifactId>
+            <version>0.9</version>
+        </dependency>
+
     </dependencies>
 
     <properties>
