@@ -1,18 +1,17 @@
 package enterprise.datamapper;
 
-
 // domain object POJO
 public class Person {
-    private int idperson;
+    private int idPerson;
     private String firstName;
     private String lastName;
 
-    public int getIdperson() {
-        return idperson;
+    public int getIdPerson() {
+        return idPerson;
     }
 
-    public void setIdperson(int idperson) {
-        this.idperson = idperson;
+    public void setIdPerson(int idPerson) {
+        this.idPerson = idPerson;
     }
 
 
