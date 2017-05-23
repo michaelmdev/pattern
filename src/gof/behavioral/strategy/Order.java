@@ -1,6 +1,5 @@
 package gof.behavioral.strategy;
 
-import gof.Payment;
 import org.joda.money.Money;
 
 import java.util.ArrayList;
@@ -13,13 +12,8 @@ import java.util.List;
 public class Order {
     private List<Item> items = new ArrayList<>();
 
-
     public void addItem(Item item) {
         items.add(item);
-    }
-
-    public boolean pay(PaymentStrategy strategy) {
-
     }
 
     public Money getTotal() {
@@ -27,5 +21,10 @@ public class Order {
         for (Item item : items)
             monies.add(item.getPrice());
         return Money.total(monies);
+    }
+
+    public void pay(PaymentStrategy strategy) {
+        Money total = getTotal();
+        strategy.pay(total);
     }
 }
