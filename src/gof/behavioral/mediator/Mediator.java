@@ -1,5 +1,5 @@
 package gof.behavioral.mediator;
 
-// интерфейс
 public interface Mediator {
+    // update(Component component);
 }

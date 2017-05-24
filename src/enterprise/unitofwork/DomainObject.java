@@ -14,4 +14,17 @@ public abstract class DomainObject {
     public void setId(Long id) {
         this.id = id;
     }
+
+    protected void markNew() {
+        UnitOfWork.getCurrent().registerNew(this);
+    }
+    protected void markClean() {
+        UnitOfWork.getCurrent().registerClean(this);
+    }
+    protected void markDirty() {
+        UnitOfWork.getCurrent().registerDirty(this);
+    }
+    protected void markRemoved() {
+        UnitOfWork.getCurrent().registerRemoved(this);
+    }
 }

@@ -14,8 +14,8 @@ public class UnitOfWork {
 
     public void registerNew(DomainObject object) { /**/ }
     public void registerDirty(DomainObject object) { /**/ }
-    public void registerRemoved(DomainObject obj) { /**/ }
-    public void registerClean(DomainObject obj) { /**/ }
+    public void registerRemoved(DomainObject object) { /**/ }
+    public void registerClean(DomainObject object) { /**/ }
 
     public void commit() {
         insertNew();
@@ -29,6 +29,19 @@ public class UnitOfWork {
         }
     }
 
+    private static ThreadLocal current = new ThreadLocal();
+
+    public static void newCurrent() {
+        setCurrent(new UnitOfWork());
+    }
+
+    public static void setCurrent(UnitOfWork unitOfWork) {
+        current.set(unitOfWork);
+    }
+
+    public static UnitOfWork getCurrent() {
+        return (UnitOfWork) current.get();
+    }
 
     static UnitOfWork instance;
 
