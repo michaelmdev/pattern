@@ -5,7 +5,7 @@ import org.apache.commons.logging.impl.Log4JLogger;
 
 public abstract class Notifier {
 
-    static Log log =new Log4JLogger(Notifier.class.getName());
+    // static Log log =new Log4JLogger(Notifier.class.getName());
 
     public void notify(String address, String subject, String message) {
         login();
@@ -26,6 +26,6 @@ public abstract class Notifier {
     // внутреннее логирование
     protected void log(String address, String subject, String message) {
         // логируем отправку
-        log.info(...);
+        // log.info(...);
     }
 }
