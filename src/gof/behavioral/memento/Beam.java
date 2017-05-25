@@ -6,10 +6,10 @@ import java.io.Serializable;
 public class Beam implements Serializable {
     int id;
 
-    Point start;
-    Point end;
+//    Point start;
+//    Point end;
 
-    // Profile profile;
+    Profile profile;
 
     Beam startBeam;
     Beam endBeam;
