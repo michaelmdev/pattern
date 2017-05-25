@@ -1,4 +1,4 @@
-package gof.behavioral.memento;
+package gof.behavioral.memento.model;
 
 import java.io.Serializable;
 
@@ -9,7 +9,7 @@ public class Beam implements Serializable {
 //    Point start;
 //    Point end;
 
-    Profile profile;
+    public Profile profile;
 
     Beam startBeam;
     Beam endBeam;

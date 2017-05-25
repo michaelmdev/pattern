@@ -1,6 +1,9 @@
 package gof.behavioral.memento;
 
 import com.google.gson.Gson;
+import gof.behavioral.memento.model.Beam;
+import gof.behavioral.memento.model.Frame;
+import gof.behavioral.memento.model.Profile;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
@@ -11,7 +14,7 @@ class FrameTest {
         Gson gson = new Gson();
 
         Frame frame = new Frame();
-        Profile profile = new Profile(1,2,3,4,5, 6);
+        Profile profile = new Profile("name" , 10);
 
         for (int i = 0; i < 4; i++) {
             Beam beam = new Beam();

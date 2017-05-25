@@ -1,4 +1,4 @@
-package gof.behavioral.memento;
+package gof.behavioral.memento.model;
 
 
 import java.io.Serializable;
