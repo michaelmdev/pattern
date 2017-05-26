@@ -30,7 +30,7 @@ public class Demo {
             JFrame frame = new JFrame("Test");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setLayout(new BorderLayout());
-            frame.add(new TestPanel());
+            frame.add(new DesignPanel());
             frame.pack();
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);

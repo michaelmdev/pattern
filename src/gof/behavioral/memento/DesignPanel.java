@@ -9,16 +9,20 @@ import java.awt.event.MouseListener;
  * @author michael.malevannyy@gmail.com, 26.05.2017
  */
 
-public class TestPanel extends JComponent {
-    public TestPanel() {
-
-        final boolean[] f = {false};
+public class DesignPanel extends JPanel {
+    public DesignPanel() {
 
         addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                f[0] = true;
-                refr
+
+                JTextField field = new JTextField("input");
+
+                field
+
+                DesignPanel.this.add(field);
+
+                repaint();
             }
 
             @Override
