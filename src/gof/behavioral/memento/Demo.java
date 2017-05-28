@@ -19,21 +19,18 @@ public class Demo {
     }
 
     private void run() {
-        EventQueue.invokeLater(() -> {
-//            try {
-//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            }
-//            catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
-//                log.error(ex);
-//            }
+        JFrame frame = new JFrame("Demo");
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
 
-            JFrame frame = new JFrame("Test");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setLayout(new BorderLayout());
-            frame.add(new DesignPanel());
-            frame.pack();
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
-        });
+        DesignMenuBar menuBar = new DesignMenuBar();
+        frame.setJMenuBar(menuBar);
+
+        DesignPanel designPanel = new DesignPanel(frame);
+        frame.add(designPanel);
+
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
     }
 }
