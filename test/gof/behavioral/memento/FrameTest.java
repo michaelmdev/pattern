@@ -17,7 +17,7 @@ class FrameTest {
         Profile profile = new Profile("name" , 10);
 
         for (int i = 0; i < 4; i++) {
-            Beam beam = new Beam();
+            Beam beam = new Beam(null,null);
             beam.profile = profile;
             frame.add(beam);
         }

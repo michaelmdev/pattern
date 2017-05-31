@@ -6,12 +6,16 @@ import java.io.Serializable;
 public class Beam implements Serializable {
     int id;
 
-//    Point start;
-//    Point end;
+    public Point start;
+    public Point end;
 
     public Profile profile;
 
-    Beam startBeam;
-    Beam endBeam;
+    public Beam startBeam;
+    public Beam endBeam;
 
+    public Beam(Point start, Point end) {
+        this.start = start;
+        this.end  = end;
+    }
 }

@@ -1,11 +1,12 @@
 package gof.behavioral.memento;
 
-import gof.behavioral.memento.model.*;
+import gof.behavioral.memento.model.Beam;
+import gof.behavioral.memento.model.Frame;
+import gof.behavioral.memento.model.Model;
 
 import javax.swing.*;
 import javax.swing.event.MouseInputAdapter;
 import java.awt.*;
-import java.awt.Point;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -63,20 +64,22 @@ public class DesignPanel extends JPanel {
         }
 
         // draw main model in black for example
-        drawModel(model);
+        g.setColor(Color.blue);
+        drawModel(g, model);
 
         // draw preview in inverse color if preview model exists
         // invertColor();
+        g.setColor(Color.white);
         if (mouseAdapter.getPreviewModel() != null) {
-            drawModel(mouseAdapter.getPreviewModel());
+            drawModel(g,mouseAdapter.getPreviewModel());
         }
     }
 
-    private void drawModel(Model model) {
+    private void drawModel(Graphics g, Model model) {
 
-        gof.behavioral.memento.model.Frame frame = model.getFrame();
+        Frame frame = model.getFrame();
         for (Beam beam : frame.getBeams()) {
-
+            g.drawLine((int)beam.start.x,(int)beam.start.y,(int)beam.end.x,(int)beam.end.y);
         }
 
     }
